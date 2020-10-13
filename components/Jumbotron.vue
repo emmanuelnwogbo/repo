@@ -1,9 +1,7 @@
 <template>
 <div class="jumbotron">
-    <figure v-for="(item, index) in images" :key="index" v-bind:class="[
-        index === tracker ? 'visible' : '',
-      ]">
-        <v-lazy-image :src="item" />
+    <figure v-for="(item, index) in images" :key="index" v-bind:class="[index === tracker ? 'visible' : '']">
+        <v-lazy-image :src="item" src-placeholder="https://res.cloudinary.com/dnsj71rid/image/upload/c_scale,q_10,w_378/v1602546774/VI2A6028_pregqc.jpg" />
     </figure>
 </div>
 </template>
@@ -13,14 +11,14 @@ import VLazyImage from "v-lazy-image";
 export default {
     name: "Jumbotron",
     components: {
-        VLazyImage
+        VLazyImage,
     },
     data() {
         return {
             images: [
                 "https://res.cloudinary.com/dnsj71rid/image/upload/c_scale,h_1294,q_26,w_2007/v1602560033/endsar_2_rjnoeg.jpg",
                 "https://res.cloudinary.com/dnsj71rid/image/upload/c_scale,h_2344,q_30,w_2261/v1602560014/endsar_4_agobpv.jpg",
-                'https://res.cloudinary.com/dnsj71rid/image/upload/c_scale,h_1294,q_26,w_2007/v1602560054/endsar_zko8am.jpg'
+                "https://res.cloudinary.com/dnsj71rid/image/upload/c_scale,h_1294,q_26,w_2007/v1602560054/endsar_zko8am.jpg",
             ],
             tracker: 0,
         };
@@ -51,7 +49,7 @@ export default {
         left: 0;
         height: 100%;
         width: 100%;
-        transition: all .5s ease-in;
+        transition: all 0.5s ease-in;
         opacity: 0;
 
         @include respond(phone) {
@@ -63,7 +61,7 @@ export default {
 
         &.visible {
             opacity: 1;
-            transition: all .5s ease-in;
+            transition: all 0.5s ease-in;
         }
 
         &.precede {

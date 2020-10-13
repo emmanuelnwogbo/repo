@@ -3,7 +3,7 @@
     <figure ref="figure" v-bind:class="[
         visible === true ? 'isloaded' : '',
       ]">
-        <v-lazy-image :src="thumbnail" />
+        <v-lazy-image :src="thumbnail" src-placeholder="https://res.cloudinary.com/dnsj71rid/image/upload/c_scale,q_10,w_378/v1602546774/VI2A6028_pregqc.jpg" />
     </figure>
 </div>
 </template>
