@@ -11,7 +11,7 @@ export default {
    */
   target: "static",
   router: {
-    base: '/<repository-name>/'
+    base: '/repo/'
   },
   /*
    ** Headers of the page
