@@ -61,11 +61,15 @@ img {
     display: block;
 }
 
-a {
+a,
+a:link,
+a:visited,
+a:focus,
+a:active {
     text-decoration: none;
     color: #fff;
 
-    &:focused {
+    & span {
         color: #fff;
     }
 }
