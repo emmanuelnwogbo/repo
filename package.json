@@ -12,7 +12,8 @@
     "axios": "^0.20.0",
     "get-video-duration": "^3.0.2",
     "node-video-duration": "^1.0.1",
-    "nuxt": "^2.14.0"
+    "nuxt": "^2.14.0",
+    "v-lazy-image": "^1.4.0"
   },
   "devDependencies": {
     "@nuxtjs/style-resources": "^1.0.0",

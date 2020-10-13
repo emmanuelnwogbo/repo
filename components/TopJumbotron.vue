@@ -5,8 +5,12 @@
 </template>
 
 <script>
+import VLazyImage from "v-lazy-image";
 export default {
     name: "TopJumbotron",
+    components: {
+        VLazyImage
+    },
 }
 </script>
 

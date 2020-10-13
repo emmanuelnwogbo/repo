@@ -1,17 +1,20 @@
 <template>
 <div class="jumbotron">
-    <figure v-for="(item, index) in images" :key="index" v-bind:style="{
-        backgroundImage: `url(${item})`,
-      }" v-bind:class="[
+    <figure v-for="(item, index) in images" :key="index" v-bind:class="[
         index === tracker ? 'visible' : '',
       ]">
+        <v-lazy-image :src="item" />
     </figure>
 </div>
 </template>
 
 <script>
+import VLazyImage from "v-lazy-image";
 export default {
     name: "Jumbotron",
+    components: {
+        VLazyImage
+    },
     data() {
         return {
             images: [

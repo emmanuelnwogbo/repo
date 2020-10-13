@@ -1,16 +1,20 @@
 <template>
 <div class="gridbox">
-    <figure ref="figure" v-bind:style="{
-        backgroundImage: `url(${thumbnail})`,
-      }" v-bind:class="[
+    <figure ref="figure" v-bind:class="[
         visible === true ? 'isloaded' : '',
-      ]"></figure>
+      ]">
+        <v-lazy-image :src="thumbnail" />
+    </figure>
 </div>
 </template>
 
 <script>
+import VLazyImage from "v-lazy-image";
 export default {
     name: "Gridbox",
+    components: {
+        VLazyImage
+    },
     props: {
         thumbnail: String,
         url: String,
@@ -38,6 +42,8 @@ export default {
     grid-column: span 7;
     grid-row: span 5;
     overflow: hidden;
+    height: 35rem;
+    background: #000000;
 
     @include respond(phone) {
         height: 40rem;
@@ -59,6 +65,7 @@ export default {
         width: 100%;
         transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
         backface-visibility: hidden;
+        height: 35rem;
 
         &:hover {
             transform: scale(1.2);
