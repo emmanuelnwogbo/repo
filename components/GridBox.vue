@@ -21,7 +21,6 @@ export default {
         visible: false
     },
     mounted() {
-        console.log(this.thumbnail)
         const imageObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {

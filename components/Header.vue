@@ -18,7 +18,7 @@
         </svg>
     </div>
 
-    <div class="header__name">endsarsmovement</div>
+    <div @click="goHome" class="header__name">endsarsmovement</div>
 
     <div class="header__menu">
         <nuxt-link v-for="(item, index) in menu" :key="index" @click="triggerMenu(item)" v-bind:class="[item === currentMenu ? 'clicked' : '']" :to="routeName[index]"><span>{{ item }}</span></nuxt-link>
@@ -32,20 +32,25 @@ export default {
     data() {
         return {
             menu: ["photos", "videos",
-                /*"locations", "social media"*/
+                /*"donation links",
+                               /*"locations", "social media"*/
             ],
-            routeName: ["/", "/videos", "/locations", "/socialmedia"],
+            routeName: ["/", "/videos", "/donationlinks", "/locations", "/socialmedia"],
             currentMenu: "photos",
             sidenavopen: false,
         };
     },
     methods: {
         triggerMenu(item) {
+            console.log(item)
             this.currentMenu = item;
         },
         togglesidenav() {
             this.sidenavopen ? (this.sidenavopen = false) : (this.sidenavopen = true);
         },
+        goHome() {
+            this.$router.push('/')
+        }
     },
 };
 </script>
@@ -71,6 +76,7 @@ export default {
         font-size: 2.4rem;
         padding-left: 3rem;
         font-weight: 700;
+        cursor: pointer;
     }
 
     &__burger {
