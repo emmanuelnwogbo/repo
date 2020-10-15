@@ -1,6 +1,6 @@
 <template>
 <div class="locations">
-    <h1>Upcoming protest locations</h1>
+    <h1>protest locations</h1>
     <div class="locations__maps">
         <div class="locations__map">
             <!--<gmap-autocomplete @place_changed="setPlace">
