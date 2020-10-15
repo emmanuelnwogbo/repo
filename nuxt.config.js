@@ -11,7 +11,7 @@ export default {
    */
   target: "static",
   router: {
-    base: '/'
+    base: "/"
   },
   /*
    ** Headers of the page
@@ -28,7 +28,14 @@ export default {
         content: process.env.npm_package_description || ""
       }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "https://res.cloudinary.com/dnsj71rid/image/upload/c_scale,h_340,q_19/v1602546774/VI2A6028_pregqc.jpg" }]
+    link: [
+      {
+        rel: "icon",
+        type: "image/x-icon",
+        href:
+          "https://res.cloudinary.com/dnsj71rid/image/upload/c_scale,h_340,q_19/v1602546774/VI2A6028_pregqc.jpg"
+      }
+    ]
   },
   /*
    ** Global CSS
@@ -38,7 +45,7 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: [],
+  plugins: ["@/plugins/google-maps.js"],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -63,9 +70,8 @@ export default {
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
-  build: {},
-  serverMiddleware: [
-    bodyParser.json(),
-    '~/api'
-  ]
+  build: {
+    transpile: [/^vue2-google-maps($|\/)/]
+  },
+  serverMiddleware: [bodyParser.json(), "~/api"]
 };
