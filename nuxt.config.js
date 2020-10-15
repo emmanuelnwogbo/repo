@@ -28,7 +28,7 @@ export default {
         content: process.env.npm_package_description || ""
       }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [{ rel: "icon", type: "image/x-icon", href: "https://res.cloudinary.com/dnsj71rid/image/upload/c_scale,h_340,q_19/v1602546774/VI2A6028_pregqc.jpg" }]
   },
   /*
    ** Global CSS
