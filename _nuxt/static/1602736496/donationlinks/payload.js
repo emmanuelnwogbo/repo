@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/donationlinks", {data:[{}],fetch:[],mutations:[]});
