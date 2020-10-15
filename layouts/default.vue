@@ -52,6 +52,7 @@ html {
 
 body {
     overflow-x: hidden;
+    background: #000000;
 }
 
 img {

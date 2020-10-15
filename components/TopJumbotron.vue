@@ -10,13 +10,13 @@
             and the systemic decay evident in the Nigerian police force. In light of
             this, thousands of youth across the nation have several peaceful
             protests to allay their grievances to the Nigerian Government. The
-            endSARSmovement.com is a media repository dedicated to document and
+            <nuxt-link to="/">endSARSmovement.com</nuxt-link> is a media repository dedicated to document and
             display the journey of Nigerian youths on their quest for real
             transformation and change.
         </p>
     </div>
     <div class="topjumbotron__intro">
-        <button class="topjumbotron__intro--btn">watch</button>
+        <button class="topjumbotron__intro--btn" @click="viewVideo('C0237_1_1_k2ehp5.mp4')">watch</button>
     </div>
 </div>
 </template>
@@ -25,9 +25,25 @@
 import VLazyImage from "v-lazy-image";
 export default {
     name: "TopJumbotron",
+    head() {
+        return {
+            script: [{
+                src: "https://unpkg.com/plyr@3",
+            }, ],
+            link: [{
+                rel: "stylesheet",
+                href: "https://unpkg.com/plyr@3/dist/plyr.css",
+            }, ],
+        };
+    },
     components: {
         VLazyImage,
     },
+    methods: {
+        viewVideo(video) {
+            this.$router.push('/video/' + video)
+        }
+    }
 };
 </script>
 
@@ -38,6 +54,9 @@ export default {
     background-size: cover;
     background-position: bottom;
     background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     @include respond(phone) {
         height: auto;
@@ -66,8 +85,7 @@ export default {
         font-size: 1.9rem;
         padding: 1rem 6rem;
         width: 84rem;
-        position: absolute;
-        bottom: 3rem;
+        position: relative;
         left: 0;
 
         @include respond(phone) {
@@ -80,14 +98,17 @@ export default {
             left: 0;
             text-align: left;
             height: auto;
-            //background: blue;
             margin-bottom: 2rem
         }
     }
 
     &__intro {
-        padding: 0 2rem;
+        padding: 1rem 6rem;
         z-index: 2;
+
+        @include respond(phone) {
+            padding: 1rem 2rem;
+        }
 
         &--btn {
             padding: 1rem 3rem;
@@ -97,6 +118,10 @@ export default {
             border: .2rem solid #fff;
             cursor: pointer;
             text-transform: uppercase;
+
+            @include respond(phone) {
+                padding: 1rem 3rem;
+            }
         }
     }
 }

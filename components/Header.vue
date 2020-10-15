@@ -18,6 +18,8 @@
         </svg>
     </div>
 
+    <div class="header__name">endsarsmovement</div>
+
     <div class="header__menu">
         <nuxt-link v-for="(item, index) in menu" :key="index" @click="triggerMenu(item)" v-bind:class="[item === currentMenu ? 'clicked' : '']" :to="routeName[index]"><span>{{ item }}</span></nuxt-link>
     </div>
@@ -65,6 +67,12 @@ export default {
         z-index: 3;
     }
 
+    &__name {
+        font-size: 2.4rem;
+        padding-left: 3rem;
+        font-weight: 700;
+    }
+
     &__burger {
         cursor: pointer;
         display: none;
@@ -82,6 +90,7 @@ export default {
         margin: 0 auto;
         font-size: 1.7rem;
         font-weight: 400;
+        transform: translateX(-11rem);
 
         @include respond(tab-land) {
             display: none;
@@ -128,12 +137,17 @@ export default {
             padding-left: 2rem;
             display: flex;
             flex-direction: column;
+            padding-top: 2rem;
             height: 100rem;
         }
 
         & span {
             display: inline-block;
             margin: 1rem 0;
+            border: .2rem solid #fff;
+            padding: 1rem 3rem;
+            margin: 2rem 1rem;
+            font-size: 2rem;
         }
     }
 }
